@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Open+Sans:wght@300&family=Press+Start+2P&family=Rubik&family=Staatliches&family=Syne&family=Yellowtail&display=swap');
+
+.content{
+    margin-right: 40px;
+    display: flex;
+
+}
+.cartademesayboton{
+    background-color: rgb(173, 230, 232);
+    opacity: 0.8;
+    padding: 20px;
+    max-height: 100vh;
+}
+body{
+    display: flex;
+    font-family: 'Open Sans';
+    max-height: 100vh;
+}
+button{
+    margin-top: 20px;
+}
+.cartas_restantes{
+    flex:none;
+}
+.form-group{
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#video_background {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: -1000;
+    overflow: hidden;
+}
+
+#video_pattern {
+    background:#fff;
+    position: fixed;
+    opacity: 0.8;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    width: 50%;
+    height: 50%;
+    z-index: 1;
+}
+form{
+    padding:20px;
+    margin:auto;
+
+}
+hr{
+    background-color: white;
+}
+
+h1{
+    margin-left: 0px;
+    font-family: 'Fredericka the Great', cursive;
+    color:white;
+}
+h3{
+    font-family: 'Fredericka the Great', cursive;
+    color: white;
+}
+.caja_ej{
+    background-color: #ECECEC;
+    border-radius: 5px;
+    margin:15px;
+    padding:20px;
+    margin-bottom: 15px;
+
+}
+label{
+    color:white;
+}
+.btn:hover{
+    background-color: #8B0000;
+    border:0px;
+}
+.btn{
+    border:0px;
+}
+
+.box_game{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100vw;
+    gap:20px;
+}
+.box_cartas{
+    display: flex;
+    gap:15px;
+    
+}
+
+

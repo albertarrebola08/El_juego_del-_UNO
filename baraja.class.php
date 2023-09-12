@@ -1,5 +1,6 @@
 <?php 
 //clase baraja
+
 class Baraja{
 	//Propiedades
 	public $conjunto_cartas;

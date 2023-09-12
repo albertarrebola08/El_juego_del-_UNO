@@ -3,41 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Index</title>
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Press+Start+2P&family=Rubik&family=Staatliches&family=Syne&family=Yellowtail&display=swap');
-
-		body{
-			font-family: 'Staatliches', cursive;
-			display:flex;
-			
-		}
-		.columna_cartas{
-			margin-right: 30px;
-
-		}
-		.content{
-			margin-right: 40px;
-			display: flex;
-
-		}
-		.cartademesayboton{
-			border-left: black 3px solid;
-			padding: 38px;
-		}
-		button{
-			margin-top: 20px;
-		}
-		.cartas_restantes{
-			flex:none;
-
-		}
-		
-		
-
-
-		
-	</style>
+	<title>UNO's game</title>
+	<link rel="stylesheet" href="index.css">
 </head>
 <body>
 	
@@ -49,15 +16,15 @@
 
 	//****************************************** INICIALIZO SESIÓN ******************************************************
 	session_start();
-	if(!isset($_SESSION['partida'])){
+
+	if (!isset($_SESSION['partida'])) {
 		require_once 'formulario_uno.php';
-		$_SESSION['partida'] = new Partida(); //creo un objeto de la clase partida y lo meto en la sesión
+		$_SESSION['partida'] = new Partida(); // Crear objeto de la clase partida y guardarlo en la sesión
 		$_SESSION['partida']->baraja->crea_baraja();
-		
-		
-	}else{
-		
 	}
+
+
+
 
 	//******************************************* AL RECIBIR SUBMIT FORMULARIO *********************************************
 		if(isset($_REQUEST['njugadors'])){// Si se reciben datos del formulario (click submit)....
@@ -100,10 +67,7 @@
 						$_SESSION['partida']->carta_en_mesa = array_pop($_SESSION['partida']->baraja->conjunto_cartas);
 
 					}
-
-			
 				}
-
 		
 				$_SESSION['partida']->jugar();
 			
@@ -175,84 +139,6 @@
 		}
 		$_SESSION['partida']->jugar();
 	}
-		
-		
-	
-	
-
-	
-
-
-	
-	
-		
-	
-	
-	
-	
-	
-
-	
-
-	
-
-
-
-			//1. Miro que jugador ha clicado en robar
-			//2. Saco una carta del array de cartas que no estan ni en la mesa ni en las manos
-			//3.La añado a la mano del jugador que ha clicado
-
-
-		
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	/***************************************PRUEBAS*******************************************
-
-		$_SESSION['partida']->mostrar_nj();
-		echo '<br>';
-		//Muestro la baraja
-			$_SESSION['partida']->baraja->pinta_baraja();//Pinto baraja del objeto i/o propiedad baraja de la sesion y objeto partida.
-		//Pruebo a pintar la carta cuyo indice es 3
-			//$_SESSION['partida']->baraja->conjunto_cartas[2]->pinta_carta_link(); 
-		//Pruebo a mezclar la baraja
-			$_SESSION['partida']->baraja->mezcla();
-			echo '<br><hr>';
-			echo 'Baraja mezclada';
-			echo '<br><hr>';
-		//Muestro la baraja
-			$_SESSION['partida']->baraja->pinta_baraja();
-		//Mostrar carta indice 3
-			echo '<br><hr>';
-			$_SESSION['partida']->baraja->indice->pinta_carta_link(); 
-		
-	*/
-	echo '<br>';
-	//SACO LAS CARTAS QUE NO ESTAN EN NINGUNA MANO CON UN PRINT R PARA VER SI ESTAN BIEN.
-		//print_r ($_SESSION['partida']->baraja->conjunto_cartas);
-	//PRUEBO CON IMAGENES
-	/*echo'<div class = cartas_restantes>';
-		foreach ($_SESSION['partida']->baraja->conjunto_cartas as $value) {
-			$value->pinta_carta();
-		}
-	echo '</div>';*/
 	?>
 
 

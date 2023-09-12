@@ -27,37 +27,33 @@ class Partida{
 		}
 
 		else{
-
-			for ($i=0; $i < $this->numero_jugadores; $i++){ 
-				echo '<div class = "columna_cartas">';
-				echo 'Jugador '.($i+1).'<br><hr>';
-				if ($this->turno == $i){
-						$this->array_jugadores[$i]->mano->pinta_baraja();
-					}else{
-						$this->array_jugadores[$i]->mano->pinta_baraja_girada();
-					}	
-				echo '</div>';//fin div columna_cartas
-				//4. Sacar una carta a la mesa.
-				echo '<br>';
+			echo '<div class = "box_game">';
+				echo '<div class = "box_cartas">';
+				for ($i=0; $i < $this->numero_jugadores; $i++){ 
+					echo '<div class = "columna_cartas">';
+					echo 'Jugador '.($i+1).'<br><hr>';
+					if ($this->turno == $i){
+							$this->array_jugadores[$i]->mano->pinta_baraja();
+						}else{
+							$this->array_jugadores[$i]->mano->pinta_baraja_girada();
+						}	
+					echo '</div>';//fin div columna_cartas
+					//4. Sacar una carta a la mesa.
+					
 				
-			
-			}
-			echo '<div class="cartademesayboton">';
+				}
+				echo '</div>'; //fin div box_cartas
+				
+				echo '<div class="cartademesayboton">';
 				$this->carta_en_mesa->pinta_carta();
-			echo '<br>';
-			if(sizeof($this->baraja->conjunto_cartas) != 0){
-				echo '<a href="index_.php?robar=true"><button type="button">Robar</button></a>';
-			}else{
-				echo 'Se han acabado las cartas para robar, seguir jugando hasta que gane el mejor!';
-			}
-			
-			echo '<br><br><br>';
-			//INTENTO DE BORRAR SESION PARA QUE SE PUEDA JUGAR MÁS DE UNA VEZ PERO LAS VARIABLES SE GUARDAN... NO NOS LO HAN ENSEÑADO
-			//echo '<div><a onClick="session_destroy()" href="formulario_uno.php" ><button >BORRAR SESIÓN Y VOLVER AL FORMULARIO</button></a></div>';
-			
-
-
-			echo '</div>';
+				echo '<br>';
+				if(sizeof($this->baraja->conjunto_cartas) != 0){
+					echo '<a href="index_.php?robar=true"><button type="button">Robar</button></a>';
+				}else{
+					echo 'Se han acabado las cartas para robar, seguir jugando hasta que gane el mejor!';
+				}
+				echo '</div>';  //fin cartamesa
+			echo '</div">'; //fin div box_game
 		}
 		
 	}
@@ -110,16 +106,7 @@ class Partida{
 		$this->constante_sentido =  $this->constante_sentido * (-1);
 		
 	}
-	
-
-
-
-
 
 }
-
-	
-
-
  
 ?>
